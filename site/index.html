@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sumon Selim · Security &amp; Cloud Engineer</title>
+  <meta name="description" content="Portfolio of Muhammad Sumon Molla Selim: Senior Software Engineer and MSc Security and Networking Engineering student at the University of Amsterdam.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="fonts/jetbrains-mono-700.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/styles.css">
+  <script type="module" src="js/main.js"></script>
+</head>
+<body>
+  <a class="skip" href="#about">Skip to content</a>
+
+  <header class="topbar">
+    <div class="nav">
+      <dl class="hud" aria-label="Status">
+        <div><dt>HOST</dt><dd>sumon@selim</dd></div>
+        <div><dt>NODE</dt><dd class="c-cyan">NL-AMS</dd></div>
+        <div class="hud-wide"><dt>UPTIME</dt><dd class="c-amber">10+ YRS</dd></div>
+        <div class="hud-wide"><dt>CERTS</dt><dd>6 VALID</dd></div>
+        <div><dt>LINK</dt><dd class="c-green" id="hud-link">probing…</dd></div>
+      </dl>
+      <nav aria-label="Main">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Toolkit</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#achievements">Certs</a></li>
+          <li><a class="nav-cta" href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker-track">
+        <span>▸ 0x01 CRYPTOGRAPHY ▸ 0x02 DIGITAL FORENSICS ▸ 0x03 ZERO TRUST ▸ 0x04 NETWORK ISOLATION ▸ 0x05 AWS ▸ 0x06 KUBERNETES ▸ 0x07 TERRAFORM ▸ 0x08 GO ▸ 0x09 DISTRIBUTED SYSTEMS ▸ 0x0A PLATFORM ENGINEERING ▸ 0x0B SPIFFE/SPIRE ▸ 0x0C SUPPLY CHAIN SECURITY&nbsp;</span>
+        <span>▸ 0x01 CRYPTOGRAPHY ▸ 0x02 DIGITAL FORENSICS ▸ 0x03 ZERO TRUST ▸ 0x04 NETWORK ISOLATION ▸ 0x05 AWS ▸ 0x06 KUBERNETES ▸ 0x07 TERRAFORM ▸ 0x08 GO ▸ 0x09 DISTRIBUTED SYSTEMS ▸ 0x0A PLATFORM ENGINEERING ▸ 0x0B SPIFFE/SPIRE ▸ 0x0C SUPPLY CHAIN SECURITY&nbsp;</span>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <p class="prompt">sumon@amsterdam:~$ whoami<span class="cursor" aria-hidden="true"></span></p>
+      <h1>Muhammad Sumon <span class="c-cyan">Molla Selim</span></h1>
+
+      <figure class="player" id="player">
+        <div class="player-top">
+          <span class="live"><span class="live-dot" aria-hidden="true"></span>LIVE REPLAY</span>
+          <span class="player-title">your request → <span id="player-host">this site</span></span>
+        </div>
+        <div class="scene" id="scene"></div>
+        <button type="button" class="intro" id="intro" aria-label="Skip intro">
+          <span class="intro-line" id="intro-line">Hey, do you know how you got here?</span>
+          <span class="intro-sub">Let me show you. This is <em>your</em> request, traced live.</span>
+          <span class="intro-skip">click to skip</span>
+        </button>
+        <p class="caption" id="caption" aria-live="polite">Tracing your connection…</p>
+        <div class="player-controls">
+          <button type="button" class="pbtn" id="play" aria-label="Play">▶</button>
+          <div class="scrub" id="scrub">
+            <div class="scrub-bar"><div class="scrub-fill" id="scrub-fill"></div></div>
+            <div class="ticks" id="ticks"></div>
+          </div>
+          <span class="ptime" id="ptime">0:00 / 0:00</span>
+          <button type="button" class="pbtn" data-replay aria-label="Retrace and replay" title="Retrace &amp; replay">↻</button>
+        </div>
+      </figure>
+      <p class="hint hero-hint"><span aria-hidden="true">🔍</span> <strong>Hint:</strong> that's a live replay of <em>your</em> request, built from your own connection data. Pause it, scrub it, or inspect each hop below.</p>
+
+      <div class="journey" id="journey">
+        <div class="journey-head">
+          <h2>Inspect each hop</h2>
+          <p class="hint">Click a hop or use <kbd>←</kbd> <kbd>→</kbd>. The replay above follows along.</p>
+        </div>
+
+        <div class="hops-wrap">
+          <div class="hops-track" id="hops-track" aria-hidden="true"></div>
+          <div class="hops-progress" id="hops-progress" aria-hidden="true"></div>
+          <div class="packet" id="packet" aria-hidden="true"></div>
+          <div class="hops" role="tablist" aria-label="Request hops">
+            <button type="button" class="hop" role="tab" data-stage="0" aria-controls="hop-panel">
+              <span class="hop-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span>
+              <span class="hop-label">You</span><span class="hop-metric" data-metric="0">…</span>
+            </button>
+            <button type="button" class="hop" role="tab" data-stage="1" aria-controls="hop-panel">
+              <span class="hop-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg></span>
+              <span class="hop-label">DNS</span><span class="hop-metric" data-metric="1">…</span>
+            </button>
+            <button type="button" class="hop" role="tab" data-stage="2" aria-controls="hop-panel">
+              <span class="hop-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span>
+              <span class="hop-label">Handshake</span><span class="hop-metric" data-metric="2">…</span>
+            </button>
+            <button type="button" class="hop" role="tab" data-stage="3" aria-controls="hop-panel">
+              <span class="hop-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="2"/><path d="M16.24 7.76a6 6 0 0 1 0 8.49M7.76 16.24a6 6 0 0 1 0-8.49M19.07 4.93a10 10 0 0 1 0 14.14M4.93 19.07a10 10 0 0 1 0-14.14"/></svg></span>
+              <span class="hop-label">Edge</span><span class="hop-metric" data-metric="3">…</span>
+            </button>
+            <button type="button" class="hop" role="tab" data-stage="4" aria-controls="hop-panel">
+              <span class="hop-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><path d="M6 6h.01M6 18h.01"/></svg></span>
+              <span class="hop-label">Origin</span><span class="hop-metric" data-metric="4">…</span>
+            </button>
+            <button type="button" class="hop" role="tab" data-stage="5" aria-controls="hop-panel">
+              <span class="hop-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></span>
+              <span class="hop-label">Delivered</span><span class="hop-metric" data-metric="5">…</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="waterfall" id="waterfall" aria-label="Timing breakdown of your page load"></div>
+
+        <div class="hop-panel" id="hop-panel" role="tabpanel" aria-live="polite"></div>
+
+        <div class="journey-controls">
+          <button type="button" class="ctl" id="hop-prev" aria-label="Previous hop">← Prev</button>
+          <span class="hop-count" id="hop-count">1 / 6</span>
+          <button type="button" class="ctl" id="hop-next" aria-label="Next hop">Next →</button>
+          <button type="button" class="ctl replay" data-replay>↻ Retrace &amp; replay</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <p class="label">01 / WHOAMI</p>
+      <h2>Kept systems <span class="c-cyan">up</span>. Now learning to keep them <span class="c-amber">safe</span>.</h2>
+      <div class="about">
+        <div class="about-text">
+          <p>I'm a Senior Software Engineer based in the Netherlands. For over 10 years I've been building software systems that need to stay reliable at scale, working mostly on backend engineering, cloud infrastructure, platform modernisation and DevOps automation.</p>
+          <p>A big part of my work is turning complex systems into simpler, more dependable ones. I have led work on distributed platforms, multi-region infrastructure, CI/CD migrations and internal engineering standards.</p>
+          <p>After a decade of keeping systems <em>up</em>, I wanted to understand how to keep them <em>safe</em>. That's why I'm doing an MSc in Security and Networking Engineering at the University of Amsterdam. This semester has been mostly Cryptography and Digital Forensics.</p>
+          <p>Outside work I mentor, speak and organise: AWS Community Builder, HashiCorp User Group organiser, and founder of Klassroom.xyz, a non-profit that helps young people build practical tech skills.</p>
+        </div>
+        <figure class="window cert">
+          <figcaption class="window-bar"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>SUMON.PEM</figcaption>
+          <div class="window-body">
+            <p class="cmd">$ openssl x509 -in sumon.pem -noout -text</p>
+            <dl class="cert-fields">
+              <dt>Subject</dt>
+              <dd><span class="k">CN</span>=Muhammad Sumon Molla Selim<br><span class="k">OU</span>=Security &amp; Networking Engineering<br><span class="k">O</span>=University of Amsterdam, <span class="k">C</span>=NL</dd>
+              <dt>Issuer</dt>
+              <dd><span class="k">CN</span>=10+ Years of Production Systems</dd>
+              <dt>Validity</dt>
+              <dd>Not Before: a decade ago<br>Not After: <span class="c-green">still learning</span></dd>
+              <dt>Key Usage</dt>
+              <dd>Backend, Cloud Infrastructure, Platform Engineering, DevOps</dd>
+              <dt>Extensions</dt>
+              <dd>AWS Community Builder, HashiCorp UG Organiser, Top 10 ADPList Mentor (DevOps)</dd>
+            </dl>
+            <p class="cmd">Key strength</p>
+            <ul class="keys">
+              <li><span>Backend</span><b class="bar bar-full"></b><em>4096-bit</em></li>
+              <li><span>Cloud</span><b class="bar bar-full"></b><em>4096-bit</em></li>
+              <li><span>Security</span><b class="bar bar-grow"></b><em>2048-bit ↑</em></li>
+            </ul>
+          </div>
+        </figure>
+      </div>
+    </section>
+
+    <section id="skills" class="section">
+      <p class="label">02 / TOOLKIT</p>
+      <h2>Tools of the trade.</h2>
+      <div class="window toolkit">
+        <div class="toolkit-tabs" role="tablist" aria-label="Skill categories">
+          <p class="toolkit-title">SELECT DIR</p>
+          <button type="button" role="tab" class="tk-tab" data-tk="security">security <span>07</span></button>
+          <button type="button" role="tab" class="tk-tab" data-tk="cloud">cloud <span>06</span></button>
+          <button type="button" role="tab" class="tk-tab" data-tk="languages">languages <span>05</span></button>
+          <button type="button" role="tab" class="tk-tab" data-tk="engineering">engineering <span>05</span></button>
+        </div>
+        <div class="toolkit-panels">
+          <div class="tk-panel" role="tabpanel" data-tk="security">
+            <p class="cmd">$ ls ./security <span class="c-muted">// current focus</span></p>
+            <ul class="tiles">
+              <li>Cryptography<small>MSc coursework</small></li><li>Digital forensics<small>MSc coursework</small></li>
+              <li>Zero Trust<small>EKS series</small></li><li>SPIFFE/SPIRE<small>workload identity</small></li>
+              <li>Network isolation<small>K8s policies</small></li><li>Supply chain security<small>IRSA, signing</small></li>
+              <li>Vulnerability mitigation<small>PHP2Shell</small></li>
+            </ul>
+          </div>
+          <div class="tk-panel" role="tabpanel" data-tk="cloud">
+            <p class="cmd">$ ls ./cloud <span class="c-muted">// where it all runs</span></p>
+            <ul class="tiles">
+              <li>AWS<small>4 certifications</small></li><li>GCP<small>Cloud Architect</small></li>
+              <li>Terraform<small>certified</small></li><li>Kubernetes<small>EKS</small></li>
+              <li>Docker<small>everything</small></li><li>Observability<small>production</small></li>
+            </ul>
+          </div>
+          <div class="tk-panel" role="tabpanel" data-tk="languages">
+            <p class="cmd">$ ls ./languages</p>
+            <ul class="tiles">
+              <li>Go</li><li>Java</li><li>Python</li><li>PHP</li><li>JavaScript</li>
+            </ul>
+          </div>
+          <div class="tk-panel" role="tabpanel" data-tk="engineering">
+            <p class="cmd">$ ls ./engineering</p>
+            <ul class="tiles">
+              <li>Distributed systems</li><li>Multi-region architecture</li><li>CI/CD</li>
+              <li>Platform modernisation</li><li>AI-assisted engineering</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <p class="label">03 / CASE FILES</p>
+      <h2>Things I've built and taken apart.</h2>
+      <div class="grid">
+        <article class="case">
+          <p class="case-id">CASE #01 <span class="tag-sec">SECURITY</span></p>
+          <h3>Zero Trust in EKS</h3>
+          <p>A 4-part series on going beyond the perimeter in Kubernetes: workload identity with SPIFFE/SPIRE, network isolation, data protection, IRSA and supply chain security.</p>
+          <p class="meta">kubernetes · aws · identity</p>
+          <a href="https://www.sumonselim.com/series/zero-trust-in-eks/" rel="noopener">open case →</a>
+        </article>
+        <article class="case">
+          <p class="case-id">CASE #02 <span class="tag-sec">SECURITY</span></p>
+          <h3>PHP2Shell defence skill</h3>
+          <p>How to patch or mitigate PHP servers against PHP2Shell, packaged as a Claude Code skill that applies the fix.</p>
+          <p class="meta">incident response · ai tooling</p>
+          <a href="https://www.sumonselim.com/php2shell-defense-patch-or-mitigate-with-a-claude-code-skill/" rel="noopener">open case →</a>
+        </article>
+        <article class="case">
+          <p class="case-id">CASE #03 <span class="tag-ai">AI</span></p>
+          <h3>Timothy: a self-hosted AI assistant</h3>
+          <p>A 7-part design of a self-hosted assistant: LLM gateway, sessions as an event log, memory, and letting the model act safely.</p>
+          <p class="meta">architecture · safety</p>
+          <a href="https://www.sumonselim.com/series/designing-a-self-hosted-ai-assistant/" rel="noopener">open case →</a>
+        </article>
+        <article class="case">
+          <p class="case-id">CASE #04 <span class="tag-net">EDGE</span></p>
+          <h3>URL shortener: AWS and Cloudflare for $0</h3>
+          <p>The same system designed twice: once on AWS for redirects at scale, and once on Cloudflare's free plan, including abuse handling at the edge.</p>
+          <p class="meta">edge networking · cost design</p>
+          <a href="https://www.sumonselim.com/series/designing-a-url-shortener-in-aws/" rel="noopener">aws case →</a>
+          <a href="https://www.sumonselim.com/series/running-a-url-shortener-on-cloudflare-for-0/" rel="noopener">cloudflare case →</a>
+        </article>
+        <article class="case">
+          <p class="case-id">CASE #05 <span class="tag-net">SYSTEMS</span></p>
+          <h3>Flash-sale seat reservation on AWS</h3>
+          <p>A 3-part design for a system that must never sell a seat twice, covering holds, payments and the slow path.</p>
+          <p class="meta">distributed systems · aws</p>
+          <a href="https://www.sumonselim.com/series/designing-a-flash-sale-seat-reservation-system-in-aws/" rel="noopener">open case →</a>
+        </article>
+        <article class="case">
+          <p class="case-id">CASE #06 <span class="tag-ai">COMMUNITY</span></p>
+          <h3>Klassroom.xyz</h3>
+          <p>A non-profit education initiative I founded to help young people build practical technology skills.</p>
+          <p class="meta">education · non-profit</p>
+          <a href="https://klassroom.xyz" rel="noopener">open case →</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="achievements" class="section">
+      <p class="label">04 / CHAIN OF TRUST</p>
+      <h2>Every cert signs the next.</h2>
+      <div class="trust">
+        <ol class="chain-list">
+          <li><span class="role">LEAF</span><span class="yr">2026</span>Google Professional Cloud Architect</li>
+          <li><span class="role">INTERMEDIATE</span><span class="yr">2025</span>AWS Certified SysOps Administrator – Associate</li>
+          <li><span class="role">INTERMEDIATE</span><span class="yr">2024</span>HashiCorp Certified: Terraform Associate (003)</li>
+          <li><span class="role">INTERMEDIATE</span><span class="yr">2023</span>AWS Certified Cloud Practitioner</li>
+          <li><span class="role">INTERMEDIATE</span><span class="yr">2023</span>AWS Certified Developer – Associate</li>
+          <li><span class="role">ROOT</span><span class="yr">2023</span>AWS Certified Solutions Architect – Associate</li>
+        </ol>
+        <div class="window trusted">
+          <p class="window-bar"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>TRUSTED_BY</p>
+          <div class="window-body">
+            <ul class="list">
+              <li>AWS Community Builder</li>
+              <li>HashiCorp User Group organiser</li>
+              <li>Top 10 ADPList Mentor in DevOps</li>
+              <li>Conference and meetup speaker on cloud, DevOps and platform engineering</li>
+              <li>Founder of Klassroom.xyz</li>
+            </ul>
+            <p class="verify"><span class="c-green">✓ chain verified</span> · <a href="https://www.credly.com/users/muhammad-sumon-molla-selim/badges" rel="noopener">check on Credly</a> · <a href="https://sessionize.com/sumonmselim" rel="noopener">talks</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact">
+      <p class="label">05 / HANDSHAKE</p>
+      <h2>Send a <span class="c-cyan">SYN</span>. I'll <span class="c-amber">ACK</span>.</h2>
+      <p>Open to conversations about security, cloud platforms, mentoring and community work.</p>
+      <ul class="links">
+        <li><a class="link-primary" href="mailto:sumonmselim@gmail.com">SYN → email</a></li>
+        <li><a href="https://github.com/SumonMSelim" rel="noopener">github</a></li>
+        <li><a href="https://linkedin.com/in/sumonmselim" rel="noopener">linkedin</a></li>
+        <li><a href="https://adplist.org/mentors/muhammad-sumon-molla-selim" rel="noopener">book mentorship</a></li>
+        <li><a href="https://www.sumonselim.com" rel="noopener">blog</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Hosted on AWS Amplify Hosting, delivered by Amazon CloudFront. <button type="button" class="linklike" data-replay>Retrace your request's journey ↑</button></p>
+  </footer>
+</body>
+</html>

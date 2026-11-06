@@ -1,0 +1,14 @@
+services:
+  web:
+    image: nginx:1.27-alpine
+    ports:
+      - "8088:80"
+    volumes:
+      - ./site:/usr/share/nginx/html:ro
+  test:
+    image: node:22-alpine
+    working_dir: /app
+    volumes:
+      - .:/app:ro
+    command: ["node", "--test", "tests/*.test.js"]
+    profiles: ["test"]
