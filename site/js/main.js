@@ -191,6 +191,7 @@ function buildStages({ host, secure, timing: t, dns, edge, json, hash }) {
   const cache = edge?.cache ?? 'unknown';
   const defenses = edge?.defenses ?? [];
   const passed = defenses.filter((d) => d.ok).length;
+  const hasCname = dns.some((r) => r.type === 'CNAME');
 
   return [
     {
@@ -204,14 +205,14 @@ function buildStages({ host, secure, timing: t, dns, edge, json, hash }) {
     },
     {
       metric: t ? fmt(t.dns) : '—',
-      caption: `DNS: ${host} → CNAME → Amazon CloudFront${t ? ` · ${fmt(t.dns)}` : ''}`,
+      caption: `DNS: ${host} → ${hasCname ? 'CNAME → ' : ''}Amazon CloudFront${t ? ` · ${fmt(t.dns)}` : ''}`,
       kicker: 'Hop 2 · DNS',
       title: `Where is ${host}?`,
       metrics: [['Lookup', t ? fmt(t.dns) : '—'], ['Records', dns.length ? String(dns.length) : 'n/a'], ['Resolved via', 'DNS-over-HTTPS']],
       visual: dns.length
         ? chain([[host, 'host'], ...dns.map((r) => [`${r.type} ${r.data}`, r.type === 'CNAME' ? 'cname' : 'ip'])])
         : chain([[host, 'host'], ['CNAME → CloudFront', 'cname'], ['edge IPs', 'ip']]),
-      text: `This name is a CNAME into Amazon CloudFront, the global CDN under AWS Amplify Hosting. ${dns.length ? 'The chain above was just re-resolved live for you.' : 'On the live site this chain is re-resolved for you in real time.'}`,
+      text: `${hasCname || !dns.length ? 'This name is a CNAME into' : 'This name resolves straight to'} Amazon CloudFront, the global CDN under AWS Amplify Hosting. ${dns.length ? 'The chain above was just re-resolved live for you.' : 'On the live site this chain is re-resolved for you in real time.'}`,
       study: 'Classic DNS is plaintext and unauthenticated: anyone on the path can read or spoof it. That is why this lookup used DNS-over-HTTPS.',
     },
     {
